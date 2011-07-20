@@ -1,2 +1,3 @@
 # Hide chat side bar
-jQuery(".fbChatSidebar").hide()
+hideChatSideBar = -> jQuery(".fbChatSidebar").remove()
+window.setTimeout hideChatSideBar, 400
