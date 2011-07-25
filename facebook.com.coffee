@@ -5,6 +5,6 @@ hideChatSideBar = ->
   if sidebar.size() == 0 && !sidebarRemoved
     # Sidebar hasn't loaded yet, try again
     window.setTimeout(hideChatSideBar, 200)
-  sidebar.remove()
+  sidebar.fadeOut(2000, -> sidebar.remove())
   sidebarRemoved = true
 hideChatSideBar()

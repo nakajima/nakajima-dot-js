@@ -1,3 +1,6 @@
+REQUIRE prototype.js
+REQUIRE prototype.event_simulate.js
+
 # Install new style
 jQuery("head").append "
   <style>
@@ -20,7 +23,8 @@ jQuery(document).bind "keydown", (e) ->
   key = String.fromCharCode(e.which).toUpperCase();
   if key == "X"
     # This one doesn't work for some reason. FUUUUUUUUUUUUUUUU...
-    jQuery(".items .item.current-item .storySelector").click()
+    elem = jQuery(".items .item.current-item .storySelector").get(0)
+    Event.simulate(elem, "click")
   if key == "J"
     move(1)
   if key == "K"
