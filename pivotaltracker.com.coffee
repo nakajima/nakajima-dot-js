@@ -5,7 +5,7 @@ REQUIRE prototype.event_simulate.js
 jQuery("head").append "
   <style>
     .current-item {
-      font-weight: bold;
+      text-decoration: underline;
     }
   </style>
 "
