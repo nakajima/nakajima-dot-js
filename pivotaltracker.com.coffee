@@ -48,14 +48,13 @@ move = (o) ->
 jQuery(document).bind "keydown", (e) ->
   return if jQuery(e.target).is(":input")
   key = String.fromKey(e.which).toUpperCase()
-  if key == "X"
-    # This one doesn't work for some reason. FUUUUUUUUUUUUUUUU...
-    elem = jQuery(".items .item.current-item .storySelector").get(0)
-    Event.simulate(elem, "click")
   if key == "J"
     move(1)
   if key == "K"
     move(-1)
+  if key == "X"
+    jQuery(".items .item.current-item .storySelector").each ->
+      Event.simulate(this, "click")
   if key == "RETURN"
     jQuery(".items .item.current-item .toggleExpandedButton").each ->
       Event.simulate(this, "click")
