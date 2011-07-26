@@ -24,6 +24,8 @@ move = (o) ->
   currentItem.addClass("current-item")
   list = currentItem.parents(".items")
 
+  # Trying to figure out when to scroll is a bitch and doesn't
+  # really work that well...
   height = list.height()
   offset = currentItem.position().top - 20
 
