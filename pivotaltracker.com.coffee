@@ -1,3 +1,4 @@
+# This is the jankiest thing ever. See the Rakefile for how it works.
 REQUIRE prototype.js
 REQUIRE prototype.event_simulate.js
 
