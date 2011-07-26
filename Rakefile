@@ -5,6 +5,7 @@ task :build do
     output = File.basename(file, ".coffee")
     system "cat #{file} | coffee -scp > #{output}.js"
 
+    # LOL
     processed_output = File.read(output + ".js")
     processed_output.gsub!(/^\s+REQUIRE\(([\w\.]+)\)/) { |f|
       dep = f.scan(/\s+REQUIRE\(([\w\.]+)\)/).flatten.first
