@@ -47,8 +47,9 @@ move = (o) ->
     puts "currentScroll: #{currentScroll}"
     currentItem.parents().scrollTop(currentScroll)
 
-simulateClick = ->
-  Event.simulate(this, "click")
+simulateClick = (css) ->
+  jQuery(css).each ->
+    Event.simulate(this, "click")
 
 jQuery(document).bind "keydown", (e) ->
   return if jQuery(e.target).is(":input")
@@ -58,8 +59,8 @@ jQuery(document).bind "keydown", (e) ->
   if key == "K"
     move(-1)
   if key == "X"
-    jQuery(".items .item.current-item .storySelector").each(simulateClick)
+    simulateClick(".items .item.current-item .storySelector")
   if key == "RETURN"
-    jQuery(".items .item.current-item .toggleExpandedButton").each(simulateClick)
+    simulateClick(".items .item.current-item .toggleExpandedButton")
   if key == "ESCAPE"
-    jQuery("input[value=Cancel]").each(simulateClick)
+    simulateClick("input[value=Cancel]")
