@@ -4,7 +4,7 @@ REQUIRE prototype.event_simulate.js
 # Install new style
 jQuery("head").append "
   <style>
-    .current-item {
+    .current-item .storyPreviewHeader {
       text-decoration: underline;
     }
   </style>
