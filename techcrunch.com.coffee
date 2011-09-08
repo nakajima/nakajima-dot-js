@@ -1,0 +1,1 @@
+$('*').css('font-family', 'Comic Sans MS');
